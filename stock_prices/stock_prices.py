@@ -1,9 +1,23 @@
 #!/usr/bin/python
 
 import argparse
-
+                    #prices//[15, 25, 60, 3650, 150, 2, 600]
 def find_max_profit(prices):
-  pass
+
+  highest_sell_value = max(prices)
+  #print(prices.index(highest_sell_value))
+  lowest_buying_price = prices[:prices.index(highest_sell_value)]
+  #print(lowest_buying_price)
+  lbp = min(lowest_buying_price)
+  #print(lbp)
+  profit = (highest_sell_value - lbp )
+  print(profit)
+  return(profit)
+
+
+find_max_profit([15, 25, 60, 3650, 150, 2, 600])
+
+
 
 
 if __name__ == '__main__':
