@@ -1,9 +1,23 @@
 #!/usr/bin/python
 
-import math
+#import math
+import operator
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  #Number of whole batches that can be made
+  whole_batches = {}
+
+  for x, y in recipe.items():
+    if x not in ingredients:
+      return 0
+
+    whole_batches[x] = ingredients[x] // y
+
+  return min(whole_batches.items(), 
+key = operator.itemgetter(1))[1]
+      #Python Docs: Return a callable object that fetches item from its operand.If multiple items are specified, returns a tuple of lookup values
+
+  
 
 
 if __name__ == '__main__':
